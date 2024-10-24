@@ -81,12 +81,18 @@ nav{
 .container{
     max-width: 1200px;
     margin: auto;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .blur{
     position: absolute;
     box-shadow: 0 0 1000px 50px #1d4ed8;
+    z-index: -100;
+}
+
+.blur2{
+    position: absolute;
+    box-shadow: 0 0 1000px 120px #1d4ed8;
     z-index: -100;
 }
 
@@ -156,7 +162,7 @@ section .header{
 }
 
 .features{
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -213,41 +219,50 @@ section .header{
     color: #ccc;
 }
 
-.pricing{
-    margin-top: 4rem;
+.projects{
+    margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
-.pricing .card{
+.projects .card{
     padding: 3rem 2rem;
     background-color: #27272a;
-    display: flex;
     flex-direction: column;
     border: 2px solid transparent;
     border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-.pricing .card:hover{
+.projects .card span{
+    display: inline-block;
+    background-color: #1e40af;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.projects .card:hover{
     background-color: #323232;
     border-color: #fff;
 }
 
-.pricing .card .content{
+.projects .card .content{
     flex: 1;
     margin-bottom: 2rem;
 }
 
-.pricing .card h4{
+.projects .card h4{
     margin-bottom: 1rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.pricing .card h3{
+.projects .card h3{
     color: #fff;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
@@ -256,52 +271,56 @@ section .header{
     border-bottom: 2px dashed #fff;
 }
 
-.pricing .card p{
+.projects .card p{
     color: #fff;
     margin-bottom: 0.75rem;
 }
 
-.pricing .card p i{
+.projects .card p i{
     color: #ccc;
     font-size: 1.2rem;
     margin-right: 0.3rem;
 }
 
-.pricing .card button{
+.projects .card button{
     color: #fff;
     background-color: transparent;
     border: 2px solid #fff;
 }
 
-.pricing .card button:hover{
+.projects .card button:hover{
     background-color: #1e40af;
     border-color: #1e40af;
 }
 
-footer{
+footer {
     position: relative;
     display: grid;
-    grid-template-columns: 400px repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Cambiado a una sola columna */
+    justify-items: center;      /* Centra los elementos horizontalmente */
+    text-align: center;         /* Centra el texto */
     gap: 2rem;
 }
 
-footer .column .logo{
-    max-width: 100px;
-    margin-bottom: 2rem;
+footer .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Alinea el contenido de las columnas en el centro */
 }
 
-footer .column p{
+footer .column p {
     color: #ccc;
     margin-bottom: 2rem;
 }
 
-footer .column .socials{
+footer .column .socials {
     display: flex;
+    justify-content: center;    /* Centra los íconos */
     align-items: center;
     gap: 1rem;
 }
 
-footer .column .socials a{
+footer .column .socials a {
     color: #ccc;
     border: 1px solid #ccc;
     padding: 5px 10px;
@@ -310,37 +329,28 @@ footer .column .socials a{
     transition: all 0.3s ease;
 }
 
-footer .column .socials a:hover{
+footer .column .socials a:hover {
     color: #fff;
     background-color: #1d4ed8;
     border-color: #1d4ed8;
 }
 
-footer .column h4{
+footer .column h4 {
     color: #fff;
     margin-bottom: 2rem;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-footer .column > a{
+footer .column > a {
     display: block;
     color: #ccc;
     margin-bottom: 1rem;
     transition: all 0.3s ease;
 }
 
-footer .column > a:hover{
+footer .column > a:hover {
     color: #1d4ed8;
-}
-
-.copyright{
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
-    color: #fff;
-    font-size: 0.8rem;
-    text-align: center;
 }
 
 @media (width < 900px){
@@ -356,7 +366,7 @@ footer .column > a:hover{
     .features{
         grid-template-columns: repeat(2, 1fr);
     }
-    .pricing{
+    .projects{
         grid-template-columns: repeat(2, 1fr);
     }
     footer{
@@ -373,7 +383,7 @@ footer .column > a:hover{
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .pricing{
+    .projects{
         grid-template-columns: repeat(1, 1fr);
     }
 
